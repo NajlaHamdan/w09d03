@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getTask } from "./../../reduce/task";
+import Logout from "./../Logout"
 const Todos = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -130,7 +131,7 @@ const Todos = () => {
             </div>
           ))
         : "no todos for this user"}
-        
+        <Logout />
     </div>
   );
 };
