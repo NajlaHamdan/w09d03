@@ -1,32 +1,35 @@
 const initialState = {
-    tocken: "",
-  };
-  
-  const tokenReducer = (state = initialState, action) => {
-    const { type, payload } = action;
-    switch (type) {
-      case "LOGIN":
-        const {token}=payload;
-        return token;
-      case "LOGOUT":
-        return payload;
+  token: "",
+  id:"",
+};
+
+const tokenReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case "LOGIN":
+      const { token,id } = payload;
+      localStorage.setItem("user", token);
+      localStorage.setItem("id", id);
+      return { token,id };
+    case "LOGOUT":
+      localStorage.clear();
+      return payload;
     default:
-        return state;
-    }
-  };
-  export default tokenReducer;
-  
-  export const signIn =(data)=>{
-      return{
-          type:"LOGIN",
-          payload:data
-      }
+      return state;
   }
-  export const logout =(data)=>{
-      // this obj is action
-    return{
-        type:"LOGOUT",
-        payload:data
-    }
-}
-  
+};
+export default tokenReducer;
+
+export const signIn = (data) => {
+  return {
+    type: "LOGIN",
+    payload: data,
+  };
+};
+export const logout = (data) => {
+  // this obj is action
+  return {
+    type: "LOGOUT",
+    payload: data,
+  };
+};
