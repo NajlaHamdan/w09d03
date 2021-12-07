@@ -7,8 +7,8 @@ const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signout = () => {
-    dispatch(logout({ token: "" ,id:""}));
-    navigate('/')
+    dispatch(logout({ token: "", id: "" }));
+    navigate("/");
   };
   return (
     <div>
