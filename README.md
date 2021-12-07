@@ -12,9 +12,11 @@
 - **Get tasks** As admin I can see all users tasks
 - **Delete task** As admin I can delete task for any user
 
-### backend endpoints
-
-
+## backend 
+# Schema
+#### user
+#### role
+#### todo
 ## Components
 
 - Login
