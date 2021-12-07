@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Login />
         <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/getTodo" element={<Todos />} />
