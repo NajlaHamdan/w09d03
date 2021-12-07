@@ -8,9 +8,6 @@ const initialState = {
       case "GET":
         const { tasks } = payload;
         return { tasks };
-      case "UPDATE":
-      case "CREATE":
-      case "DELETE":
       default:
         return state;
     }

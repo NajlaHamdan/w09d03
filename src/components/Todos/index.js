@@ -17,9 +17,12 @@ const Todos = () => {
       //   let id = localStorage.getItem("id");
       //   const token = localStorage.getItem("user");
       //   console.log(token);
-      const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/getTodo/${id}`, {
-        headers: { Authorization: `Brearer ${token}` },
-      });
+      const result = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/getTodo/${id}`,
+        {
+          headers: { Authorization: `Brearer ${token}` },
+        }
+      );
       console.log(result.data);
       dispatch(getTask(result.data));
       if (result.data === "no todos for this user") {
@@ -37,8 +40,8 @@ const Todos = () => {
   const createTask = async (e) => {
     try {
       e.preventDefault();
-    //   const token = localStorage.getItem("user");
-    //   let id = localStorage.getItem("id"); //userId
+      //   const token = localStorage.getItem("user");
+      //   let id = localStorage.getItem("id"); //userId
       // const todoId="61acc1437063cd2253f029d4";
       console.log(e.target.task.value);
       const name = e.target.task.value;
@@ -59,7 +62,33 @@ const Todos = () => {
     }
   };
   const deleteTodo = (todoId) => {};
-  const update = (todoId) => {};
+  const update = async (todoId) => {
+    try {
+      const name = prompt("enter your todo");
+      console.log(name.value);
+      console.log(todoId);
+      //   const token = localStorage.getItem("user");
+      //   let id = localStorage.getItem("id"); //userId
+      // const todoId="61acc1437063cd2253f029d4";
+      // console.log(e.target.task.value);
+      // const name = e.target.task.value;
+      const result = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/updateById`,
+        {
+          name,
+          id,
+          todoId,
+        },
+        {
+          headers: { Authorization: `Brearer ${token}` },
+        }
+      );
+      console.log(result);
+      getTodos();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
