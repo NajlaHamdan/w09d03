@@ -15,6 +15,9 @@ const tokenReducer = (state = initialState, action) => {
       localStorage.clear();
       return payload;
     default:
+      const userTocken=localStorage.getItem("user");
+      const userId=localStorage.getItem("id");
+      if(userTocken)return {token:userTocken,id:userId}
       return state;
   }
 };

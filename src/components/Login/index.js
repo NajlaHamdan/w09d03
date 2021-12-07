@@ -27,7 +27,7 @@ const Login = () => {
     try{
       e.preventDefault();
     axios
-      .post(`http://localhost:4000/login`, {
+      .post(`${process.env.REACT_APP_BASE_URL}/login`, {
         email: e.target.email.value,
         password: e.target.password.value,
       })

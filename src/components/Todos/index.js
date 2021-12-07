@@ -17,7 +17,7 @@ const Todos = () => {
       //   let id = localStorage.getItem("id");
       //   const token = localStorage.getItem("user");
       //   console.log(token);
-      const result = await axios.get(`http://localhost:4000/getTodo/${id}`, {
+      const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/getTodo/${id}`, {
         headers: { Authorization: `Brearer ${token}` },
       });
       console.log(result.data);
@@ -34,10 +34,32 @@ const Todos = () => {
       console.log(err);
     }
   };
-
-  const deleteTodo = () => {};
-  const createTask = (id) => {};
-  const update = (id) => {};
+  const createTask = async (e) => {
+    try {
+      e.preventDefault();
+    //   const token = localStorage.getItem("user");
+    //   let id = localStorage.getItem("id"); //userId
+      // const todoId="61acc1437063cd2253f029d4";
+      console.log(e.target.task.value);
+      const name = e.target.task.value;
+      const result = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/createTodo`,
+        {
+          name,
+          id,
+        },
+        {
+          headers: { Authorization: `Brearer ${token}` },
+        }
+      );
+      console.log(result);
+      getTodos();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const deleteTodo = (todoId) => {};
+  const update = (todoId) => {};
 
   return (
     <div>
