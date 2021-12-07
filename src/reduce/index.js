@@ -2,9 +2,9 @@ import {createStore,combineReducers} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 
 import tokenReducer from "./login";
-// import tasks from "./tasks";
+ import task from "./task";
 
-const reducers=combineReducers({tokenReducer});
+const reducers=combineReducers({tokenReducer,task});
 
 const store=()=>{
     return createStore(reducers,composeWithDevTools());
