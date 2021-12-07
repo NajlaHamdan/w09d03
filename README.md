@@ -15,7 +15,17 @@
 ## backend 
 # Schema
 #### user
+
 #### role
+``` 
+const role = new mongoose.Schema({
+  role: {
+    type: String,
+    required: true,
+  },
+  permissions: {type:Array,required:true},
+});
+```
 #### todo
 ## Components
 
