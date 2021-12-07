@@ -87,8 +87,42 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## backend 
 # Schema
 #### user
+```
+const user = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+    unique: true,
+  },
+  password: {type:String,required:true},
+  role: [{ type: mongoose.Schema.Types.ObjectId ,ref:"role"}],
+  todo: [
+    {
+      type:{type: mongoose.Schema.Types.ObjectId,
+      ref:"todos"},
+    },
+  ],
+});
+```
 #### role
+``` 
+const role = new mongoose.Schema({
+  role: {
+    type: String,
+    required: true,
+  },
+  permissions: {type:Array,required:true},
+});
+```
 #### todo
+```
+const todos = new mongoose.Schema({
+  name: { type: String, required: true },
+  isDelete: { type: Boolean, default: false },
+  owner:  { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+});
+```
 ## Components
 
 - Login
