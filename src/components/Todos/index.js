@@ -61,7 +61,20 @@ const Todos = () => {
       console.log(err);
     }
   };
-  const deleteTodo = (todoId) => {};
+  const deleteTodo = async (todoId) => {
+    // let id = localStorage.getItem("id");
+    // console.log(itemId);
+    // const todoId = itemId;
+    // const token = localStorage.getItem("user");
+    const result = await axios.delete(
+      `${process.env.REACT_APP_BASE_URL}/deleteTodo/${id}/${todoId}`,
+      {
+        headers: { Authorization: `Brearer ${token}` },
+      }
+    );
+    console.log(result.data);
+    getTodos();
+  };
   const update = async (todoId) => {
     try {
       const name = prompt("enter your todo");
