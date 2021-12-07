@@ -24,7 +24,7 @@ const Todos = () => {
         }
       );
       console.log(result.data);
-      dispatch(getTask(result.data));
+    //   dispatch(getTask(result.data));
       if (result.data === "no todos for this user") {
         dispatch(getTask([]));
       } else {
