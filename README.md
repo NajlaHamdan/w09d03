@@ -59,3 +59,8 @@ const todos = new mongoose.Schema({
 - SignupPage
 - GetTodo
 - Admin
+
+#Digrams
+##ER digram
+![alt text](./uml front todo)
+
