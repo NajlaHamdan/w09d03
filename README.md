@@ -60,7 +60,11 @@ const todos = new mongoose.Schema({
 - GetTodo
 - Admin
 
-#Digrams
-##ER digram
+# Digrams
+## ER digram
+![alt text](./ERTodo.jpg)
+## UML digram for back-end
+![alt text](./umlBackTodo.jpg)
+## UML digram for front-end
 ![alt text](./umlFrontTodo.jpg)
 
