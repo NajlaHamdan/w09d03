@@ -62,5 +62,5 @@ const todos = new mongoose.Schema({
 
 #Digrams
 ##ER digram
-![alt text](./uml front todo.jpg)
+![alt text](./umlFrontTodo.jpg)
 
