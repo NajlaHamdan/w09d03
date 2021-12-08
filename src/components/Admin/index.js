@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getTask } from "./../../reduce/task";
+import Logout from "./../Logout"
 const Admin = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -53,15 +54,16 @@ const Admin = () => {
   };
   return (
     <div>
-      <form>
+      {/* <form>
         <input type="text" name="task" />
         <button>add task</button>
-      </form>
+      </form> */}
       {state.task.tasks
         ? state.task.tasks.map((item) => (
             <div key={item._id}>
               <p>{item.name}</p>
               <button
+              className="deleteBtn"
                 onClick={() => {
                   deleteTodoByAdmin(item._id);
                 }}
@@ -78,6 +80,7 @@ const Admin = () => {
             </div>
           ))
         : "no todos for this user"}
+        <Logout />
     </div>
   );
 };

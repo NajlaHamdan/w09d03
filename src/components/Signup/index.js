@@ -26,8 +26,8 @@ const SignUp = () => {
   return (
     <div>
       <form onSubmit={signUp} method="post">
-        <input type="email" name="email" />
-        <input type="password" name="password" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
         <button type="submit">sign up</button>
       </form>
     </div>

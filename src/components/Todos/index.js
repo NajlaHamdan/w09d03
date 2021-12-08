@@ -115,6 +115,7 @@ const Todos = () => {
             <div key={item._id}>
               <p>{item.name}</p>
               <button
+              className="deleteBtn"
                 onClick={() => {
                   deleteTodo(item._id);
                 }}
@@ -122,6 +123,7 @@ const Todos = () => {
                 delete
               </button>
               <button
+              className="updateBtn"
                 onClick={() => {
                   update(item._id);
                 }}

@@ -59,8 +59,8 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={logIn} method="post">
-        <input type="email" name="email" />
-        <input type="password" name="password" />
+        <input type="email" name="email" placeholder='Email' />
+        <input type="password" name="password" placeholder="Password" />
         <button type="submit">sign in</button>
       </form>
     </div>
